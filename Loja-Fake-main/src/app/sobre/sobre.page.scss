@@ -1,0 +1,66 @@
+.custom-toolbar {
+  --background: #232f3e;
+  color: white;
+}
+
+.logo-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.store-icon {
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 12px;
+}
+
+.detalhes-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.imagem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+
+  img {
+    width: 100%;
+    max-width: 280px;
+    max-height: 280px;
+    object-fit: contain;
+  }
+}
+
+.titulo-produto {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #232f3e;
+  margin-bottom: 6px;
+}
+
+.preco {
+  font-size: 1.2rem;
+  color: #b12704;
+  font-weight: bold;
+}
+
+.descricao {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-top: 16px;
+}
+
+.categoria {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 12px;
+}

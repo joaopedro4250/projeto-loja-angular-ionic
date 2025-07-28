@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-icon name="storefront-outline" slot="icon-only" class="store-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title class="logo-title">Loja Fake</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" routerLink="/home">
+        <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card *ngIf="produto" class="detalhes-card">
+    <div class="imagem-container">
+      <img [src]="produto.image" alt="Imagem do produto" />
+    </div>
+
+    <ion-card-header>
+      <ion-card-title class="titulo-produto">
+        {{ produto.title }}
+      </ion-card-title>
+      <ion-card-subtitle class="preco">
+        R$ {{ produto.price | number:'1.2-2' }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="descricao"><strong>Descrição:</strong><br /> {{ produto.description }}</p>
+      <p class="categoria"><strong>Categoria:</strong> {{ produto.category }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

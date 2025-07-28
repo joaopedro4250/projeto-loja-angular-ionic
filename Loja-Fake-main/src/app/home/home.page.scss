@@ -1,0 +1,91 @@
+:host {
+  --ion-background-color: #f5f5f5;
+}
+
+ion-content {
+  background-color: var(--ion-background-color);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+ // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    background-color: #fafafa;
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  ion-card-header {
+    padding: 12px 16px 0 16px;
+  }
+
+  ion-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .price {
+    color: #b12704;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 4px;
+  }
+
+  ion-card-content {
+    padding: 0 16px 12px 16px;
+  }
+
+  .category {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  ion-button {
+    --background: #ff9900;
+    --background-hover: #e08800;
+    --color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+.custom-toolbar {
+  --background: #232f3e; // Cor parecida com a da Amazon
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.store-icon {
+  font-size: 1.6rem;
+  color: white;
+  margin-left: 12px;
+}

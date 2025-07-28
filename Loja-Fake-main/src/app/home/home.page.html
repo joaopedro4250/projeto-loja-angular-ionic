@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <ion-icon name="storefront-outline" slot="icon-only" class="store-icon"></ion-icon>
+    </ion-buttons>
+    <ion-title class="logo-title">Loja Fake</ion-title>
+    <ion-buttons slot="end">
+  <ion-button fill="clear" [routerLink]="['/carrinho']">
+    <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+  </ion-button>
+</ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+   <!-- 🔘 Botões para alternar os estados -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="medium" (click)="simularCarregando()">
+          🔄 Carregando
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="danger" (click)="mostrarVazio()">
+          ❌ Sem produtos
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="success" (click)="mostrarComProdutos()">
+          ✅ Mostrar produtos
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- (resto do conteúdo com *ngIf continua igual) -->
+  <!-- ✅ Carregando... -->
+  <div *ngIf="carregando" class="carregando">
+    <ion-spinner name="dots"></ion-spinner>
+    <p>Carregando produtos...</p>
+  </div>
+
+  <!-- ✅ Lista vazia -->
+  <div *ngIf="!carregando && products.length === 0" class="sem-produtos">
+    <ion-text color="danger">
+      <h3>Nenhum produto disponível no momento.</h3>
+    </ion-text>
+  </div>
+
+  <!-- ✅ Lista de produtos -->
+  <div *ngIf="!carregando && products.length > 0" class="product-grid">
+    <ion-card *ngFor="let product of products" class="product-card" appDestaque>
+      <img [src]="product.image" alt="{{ product.title }}" />
+
+      <ion-card-header>
+        <ion-card-title>{{ product.title | uppercase }}</ion-card-title>
+        <ion-card-subtitle class="price">R$ {{ product.price | number: '1.2-2' }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="category">{{ product.category }}</p>
+        <p class="descricao">{{ product.description | limitador:60 }}</p>
+
+        <ion-button expand="block" (click)="comprar(product)">
+  <ion-icon name="cart-outline" slot="start"></ion-icon>
+  Comprar agora
+</ion-button>
+
+
+        <ion-button expand="block" color="success" [routerLink]="['/sobre']" [state]="{ produto: product }">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          Ver detalhes
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

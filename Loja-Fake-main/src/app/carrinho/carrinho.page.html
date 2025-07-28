@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrinho de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="itens.length === 0">
+    <ion-text color="danger">
+      <h3>Seu carrinho está vazio 😢</h3>
+    </ion-text>
+  </div>
+
+  <ion-list *ngIf="itens.length > 0">
+    <ion-item *ngFor="let item of itens">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ item.title }}</h3>
+        <p>R$ {{ item.price | number:'1.2-2' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="danger" (click)="limparCarrinho()" *ngIf="itens.length > 0">
+    Limpar carrinho
+  </ion-button>
+</ion-content>

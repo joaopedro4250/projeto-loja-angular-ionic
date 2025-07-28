@@ -1,0 +1,60 @@
+ion-header {
+  ion-toolbar {
+    --background: var(--ion-color-primary);
+    color: white;
+
+    ion-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+ion-content {
+  background: #f2f2f2;
+}
+
+.sem-produtos {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+ion-list {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --background: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+ion-thumbnail img {
+  border-radius: 10px;
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+}
+
+ion-label h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+ion-button {
+  margin-top: 20px;
+  font-weight: bold;
+  --border-radius: 8px;
+}
